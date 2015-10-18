@@ -40,3 +40,5 @@ RUN ansible-playbook -i "localhost," -c local ansible/playbook.yml
 RUN service mysql restart
 RUN service nginx restart
 RUN service php5-fpm restart
+RUN service beanstalkd restart
+

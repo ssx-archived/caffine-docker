@@ -1,4 +1,4 @@
-# Caffine
+## Caffine
 Caffine is a simple LAMP environment, provisioning handled by ansible with docker 
 and virtualbox providers for local development. The components are:
   
@@ -8,13 +8,13 @@ and virtualbox providers for local development. The components are:
         
 ---
 
-# Development Stack
+### Development Stack
 This stack contains PHP5.6, nginx, node, composer and more. For a full picture, 
 take a look through the Ansible playbooks.
 
 ---
 
-# Use without building
+### Use without building
 If you wish to use this development environment without building the images, use the 
 Dockerhub hosted image:
  
@@ -22,7 +22,7 @@ Dockerhub hosted image:
  
 ---
 
-# Pull Ansible submodules
+### Pull Ansible submodules
 You'll need to pull in the shared ansible scripts, using:
 
     git submodule init
@@ -31,3 +31,11 @@ You'll need to pull in the shared ansible scripts, using:
 
 This should create/update the `ansible` directory which contains the playbooks 
 used to configure the development environment.
+
+---
+
+### Build
+To build this image, after cloing the repo and updating the submodules, run the 
+following command:
+
+    docker build --no-cache -t hellossx/caffine:latest .
