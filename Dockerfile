@@ -36,6 +36,11 @@ WORKDIR /opt/ansible
 # Run ansible config locally
 RUN ansible-playbook -i "localhost," -c local ansible/playbook.yml
 
+# Remove ansible from the base image, we only needed it for provisioning
+RUN rm -rf /opt/ansible
+RUN apt-get remove ansible python-apt
+RUN apt-get clean all
+
 # Restart services
 RUN service mysql restart
 RUN service nginx restart
