@@ -25,8 +25,8 @@ Dockerhub hosted image:
 # Pull Ansible submodules
 You'll need to pull in the shared ansible scripts, using:
 
-    git submodules init
-    git submodules update
+    git submodule init
+    git submodule update
 
 
 This should create/update the `ansible` directory which contains the playbooks 
