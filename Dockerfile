@@ -34,7 +34,7 @@ ADD ansible /opt/ansible
 WORKDIR /opt/ansible
 
 # Run ansible config locally
-RUN ansible-playbook -i "localhost," -c local playbook.yml
+RUN ansible-playbook -i "localhost," -c local ansible/playbook.yml
 
 # Restart services
 RUN service mysql restart
