@@ -42,6 +42,9 @@ RUN apt-get remove -y ansible python-apt
 RUN apt-get autoremove -y
 RUN apt-get clean all
 
+# Switch back to root
+WORKDIR /
+
 # Restart services
 RUN service mysql restart
 RUN service nginx restart
