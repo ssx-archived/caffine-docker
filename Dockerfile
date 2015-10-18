@@ -38,7 +38,8 @@ RUN ansible-playbook -i "localhost," -c local ansible/playbook.yml
 
 # Remove ansible from the base image, we only needed it for provisioning
 RUN rm -rf /opt/ansible
-RUN apt-get remove ansible python-apt
+RUN apt-get remove -y ansible python-apt
+RUN apt-get autoremove -y
 RUN apt-get clean all
 
 # Restart services
@@ -46,4 +47,3 @@ RUN service mysql restart
 RUN service nginx restart
 RUN service php5-fpm restart
 RUN service beanstalkd restart
-
