@@ -14,6 +14,14 @@ take a look through the Ansible playbooks.
 
 ---
 
+# Use without building
+If you wish to use this development environment without building the images, use the 
+Dockerhub hosted image:
+ 
+    docker run -itP hellossx/lamp 
+ 
+---
+
 # Pull Ansible submodules
 You'll need to pull in the shared ansible scripts, using:
 
